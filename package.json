@@ -1,5 +1,5 @@
 {
-  "name": "giga-eslint",
+  "name": "eslint-config-giga",
   "version": "1.0.0",
   "description": "giga eslint config",
   "main": "index.js",
