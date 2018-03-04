@@ -1,0 +1,36 @@
+{
+  "name": "giga-eslint",
+  "version": "1.0.0",
+  "description": "giga eslint config",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lint && npm test",
+    "test": "node ./test/index.js",
+    "lint": "eslint --ext .js --ignore-pattern bad.* .",
+    "format": "eslint --fix ./index.js"
+  },
+  "keywords": [
+    "eslint",
+    "giga"
+  ],
+  "author": "ran_ning@126.com",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "eslint": "^4.18.1",
+    "husky": "^0.15.0-rc.8",
+    "lint-staged": "^7.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run start"
+    }
+  }
+}
